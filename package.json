@@ -1,14 +1,17 @@
 {
   "name": "react-app-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
-  "description": "Practice & learn the fun way",
+  "description": "React Boilerplate",
   "author": "Stanislav Woodger",
   "repository": {
     "type": "git",
     "url": "https://github.com/woodger/react-app-boilerplate"
   },
   "main": "dist/index.html",
+  "engines": {
+    "node": ">=8.12.0"
+  },
   "directories": {
     "doc": "docs"
   },
