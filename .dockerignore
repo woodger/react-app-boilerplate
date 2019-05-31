@@ -3,15 +3,18 @@ node_modules
 package-lock.json
 yarn.lock
 
-# Environment variables
-.env.!example
+# CVS and environment variables
 .env
+.git
 
 # The development file
-database/sqlite.mmdb
 .eslintcache
 .nyc_output
+database/sqlite.mmdb
+dist
+docs
 coverage
+test
 
 # Editor files
 .DS_Store
