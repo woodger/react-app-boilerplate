@@ -1,6 +1,6 @@
 # React app boilerplate
 
-##### [Pipeline](docs/pipeline.md) | [Environment variables](docs/environment-variables.md)
+##### [Development](docs/development.md) | [Environment variables](docs/environment-variables.md)
 
 ## Getting Started
 
@@ -43,5 +43,5 @@ To build application in `production` environments, run:
 
 ```bash
 npm install --production
-npm start
+npm run build
 ```

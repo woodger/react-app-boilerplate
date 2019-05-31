@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DotenvWebpack = require('dotenv-webpack');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv-safe');
 
 module.exports = () => {
   dotenv.config();
@@ -10,6 +9,7 @@ module.exports = () => {
     entry: './src/index.js',
     output: {
       path: path.join(__dirname, 'dist'),
+      publicPath: '/',
       filename: 'index-bundle.js'
     },
     module: {
@@ -22,20 +22,29 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.svg$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'static/media/[name].[hash:8].ext'
+          }
+        },
+        {
+          test: /\.(eot|otf|ttf|woff|woff2)$/,
+          loader: 'file-loader'
         }
       ]
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html'
-      }),
-      new DotenvWebpack({
-        safe: true,
-        systemvars: true
       })
     ],
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
+      historyApiFallback: true,
       compress: true,
       host: process.env.HOST,
       port: process.env.PORT,
