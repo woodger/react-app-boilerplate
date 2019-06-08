@@ -61,6 +61,9 @@ Root directories:
   "presets": [
     "@babel/preset-env",
     "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
   ]
 }
 ```
@@ -82,7 +85,6 @@ yarn.lock
 # The development file
 .eslintcache
 .nyc_output
-database/sqlite.mmdb
 dist
 docs
 coverage
@@ -113,7 +115,6 @@ yarn.lock
 .env
 
 # The development file
-database/sqlite.mmdb
 .eslintcache
 .nyc_output
 coverage

@@ -4,13 +4,13 @@ package-lock.json
 yarn.lock
 
 # CVS and environment variables
+.env.!example
 .env
 .git
 
 # The development file
 .eslintcache
 .nyc_output
-database/sqlite.mmdb
 dist
 docs
 coverage
