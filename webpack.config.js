@@ -1,9 +1,15 @@
+const url = require('url');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv-safe');
 
 module.exports = () => {
   dotenv.config();
+
+  const {
+    hostname:host,
+    port
+  } = url.parse(process.env.WEB_UPL);
 
   return {
     entry: './src/index.js',
@@ -43,14 +49,14 @@ module.exports = () => {
       })
     ],
     devServer: {
+      host,
+      port,
       contentBase: path.join(__dirname, 'dist'),
       historyApiFallback: true,
       compress: true,
-      host: process.env.HOST,
-      port: process.env.PORT,
       after() {
         console.log(
-          `Application started on http://${process.env.HOST}:${process.env.PORT}`
+          `Application started on http://${host}:${port}`
         );
       }
     }

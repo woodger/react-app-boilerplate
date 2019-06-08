@@ -8,10 +8,10 @@ yarn.lock
 .env
 
 # The development file
-database/sqlite.mmdb
 .eslintcache
 .nyc_output
 coverage
+dist
 
 # Editor files
 .DS_Store
