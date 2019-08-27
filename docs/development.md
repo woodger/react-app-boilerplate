@@ -6,6 +6,7 @@
 - [Directory structure](#directory-structure)
 - [Git flow as a branching strategy](#git-flow-as-a-branching-strategy)
 - [Quality code](#quality-code)
+- [Advanced tools](#advanced-tools)
 
 ### Technology stack
 
@@ -14,7 +15,6 @@ An application cannot have hard dependencies. Library parties must have licenses
 Eenvironment variables must locate into a separate file using default values.
 
 > Each environment variable must be described. If you use a third-party service, you must include a description where you can get the necessary data to use it.
-
 
 ### Directory structure
 
@@ -34,7 +34,8 @@ Recommended file organization:
 |  ├─ redux/
 |  ├─ styles/
 |  |  ├─ fonts/
-|  |  └─ App.css
+|  |  ├─ App.css
+|  |  └─ favicon.ico
 |  ├─ utils/
 |  ├─ index.html
 |  └─ index.js
@@ -63,7 +64,8 @@ Root directories:
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
   ]
 }
 ```
@@ -219,7 +221,13 @@ The `font-weight` property should only be the value of` bold` or `normal`.
 
 Preferred units `rem`.
 
-###### Pixel perfect
+### Advanced tools
+
+#### Pixel perfect
 
 We recommend using a browser extension for Google Chrome [PerfectPixel by WellDoneCode](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi). Extension for web developers and markup designers.
 PerfectPixel allows developers to put a semi-transparent image overlay over the top of the developed HTML and perform pixel perfect comparison between them.
+
+#### Search by Image
+
+We recommend using a browser extension [Search by Image](https://github.com/dessant/search-by-image). Search by Image is a browser extension which enables you to initiate a reverse image search from the right-click context menu or the browser toolbar. It finds all images positioned in the clicked area, including those declared in CSS. The extension also supports uploading local images and searching for images from private sites. Recommended to use Yandex.Images search engine.
